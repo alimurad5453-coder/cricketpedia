@@ -1,69 +1,49 @@
+let playersData = [];
+
+// LOAD DATA FROM JSON
+fetch("players.json")
+.then(res => res.json())
+.then(data => {
+    playersData = data;
+    renderPlayers(playersData);
+});
+
+// SHOW PLAYERS ON INDEX PAGE
+function renderPlayers(list) {
+    let container = document.getElementById("playersList");
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    list.forEach(player => {
+        container.innerHTML += `
+            <div class="card" onclick="openPlayer('${player.id}')">
+                <h3>${player.name}</h3>
+                <p>Country: ${player.country}</p>
+                <p>Type: ${player.type}</p>
+            </div>
+        `;
+    });
+}
+
+// SEARCH FUNCTION
 function searchSite() {
     let input = document.getElementById("searchBox").value.toLowerCase();
-    let cards = document.getElementsByClassName("card");
 
-    for (let i = 0; i < cards.length; i++) {
-        let text = cards[i].innerText.toLowerCase();
+    let filtered = playersData.filter(p =>
+        p.name.toLowerCase().includes(input)
+    );
 
-        if (text.includes(input)) {
-            cards[i].style.display = "";
-        } else {
-            cards[i].style.display = "none";
-        }
-    }
+    renderPlayers(filtered);
 }
-let topBtn = document.getElementById("topBtn");
 
-window.onscroll = function() {
-    if (document.documentElement.scrollTop > 200) {
-        topBtn.style.display = "block";
-    } else {
-        topBtn.style.display = "none";
-    }
-};
+// OPEN PLAYER PAGE
+function openPlayer(id) {
+    window.location.href = "player.html?id=" + id;
+}
 
+// TOP BUTTON
 function goTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-let sections = document.querySelectorAll("section");
-let navLinks = document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach(section => {
-        let sectionTop = section.offsetTop - 100;
-        if (scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-    });
-});
-let allSections = document.querySelectorAll("section");
-
-function revealSections() {
-    let triggerBottom = window.innerHeight - 100;
-
-    allSections.forEach(sec => {
-        let sectionTop = sec.getBoundingClientRect().top;
-
-        if (sectionTop < triggerBottom) {
-            sec.classList.add("show");
-        }
-    });
-}
-
-window.addEventListener("scroll", revealSections);
-
-// page load pe bhi run ho
-revealSections();
-function toggleMenu() {
-    let nav = document.querySelector("nav");
-    nav.classList.toggle("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
