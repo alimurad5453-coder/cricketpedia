@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+    <h1 id="playerName">Loading...</h1>
+</header>
+
+<section class="card">
+
+    <h2>Player Info</h2>
+
+    <p><b>Country:</b> <span id="playerCountry"></span></p>
+    <p><b>Type:</b> <span id="playerType"></span></p>
+
+</section>
+
+<script>
+let params = new URLSearchParams(window.location.search);
+let id = params.get("id");
+
+fetch("players.json")
+.then(res => res.json())
+.then(data => {
+
+    let player = data.find(p => p.id === id);
+
+    if(player) {
+        document.getElementById("playerName").innerText = player.name;
+        document.getElementById("playerCountry").innerText = player.country;
+        document.getElementById("playerType").innerText = player.type;
+    } else {
+        document.getElementById("playerName").innerText = "Player Not Found";
+    }
+
+});
+</script>
+
+</body>
+</html>
