@@ -6,122 +6,58 @@
 </head>
 <body>
 
-<!-- HERO -->
+<!-- HERO BANNER -->
 <header class="hero">
     <h1>🏏 CricketPedia</h1>
     <p>Your Complete Cricket Knowledge Hub</p>
 </header>
 
-<!-- NAV -->
-<nav>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <a href="index.html">Home</a>
-    <a href="#players">Players</a>
-    <a href="#umpires">Umpires</a>
-    <a href="#stadiums">Stadiums</a>
-    <a href="#history">History</a>
-</nav>
+<!-- SEARCH (RIGHT SIDE STYLE) -->
+<div class="search-container">
+    <input type="text" id="searchBox" onkeyup="searchSite()" placeholder="Search here...">
+</div>
 
-<!-- SEARCH -->
-<input type="text" id="searchBox" onkeyup="searchSite()" placeholder="Search players...">
-
-<!-- DASHBOARD -->
+<!-- MAIN DASHBOARD -->
 <section class="dashboard">
 
+    <!-- 1 -->
     <div class="card">
-        <h3>🏏 Players</h3>
-        <p>View cricket players stats</p>
+        <h3>🌍 International Teams</h3>
+        <p>View all cricket nations</p>
     </div>
 
+    <!-- 2 -->
+    <div class="card">
+        <h3>🏆 ICC & ACC Events</h3>
+        <p>International & Asia cricket events</p>
+    </div>
+
+    <!-- 3 -->
     <div class="card">
         <h3>🧑‍⚖️ Umpires</h3>
         <p>Explore umpire records</p>
     </div>
 
+    <!-- 4 -->
     <div class="card">
         <h3>🏟️ Stadiums</h3>
-        <p>Famous cricket stadiums</p>
+        <p>Famous cricket grounds</p>
     </div>
 
+    <!-- 5 -->
     <div class="card">
         <h3>📜 History</h3>
-        <p>Cricket evolution</p>
+        <p>Cricket evolution & history</p>
+    </div>
+
+    <!-- 6 -->
+    <div class="card">
+        <h3>🏏 Leagues</h3>
+        <p>IPL, PSL, BBL and other leagues</p>
     </div>
 
 </section>
 
-<!-- PLAYERS (DYNAMIC) -->
-<section id="players">
-    <h2>Top Players</h2>
-    <div id="playersList"></div>
-</section>
-
-<!-- UMPIRES (DYNAMIC) -->
-<section id="umpires">
-    <h2>Top Umpires</h2>
-    <div id="umpiresList"></div>
-</section>
-
-<!-- STADIUMS (DYNAMIC) -->
-<section id="stadiums">
-    <h2>Famous Stadiums</h2>
-    <div id="stadiumsList"></div>
-</section>
-
-<!-- HISTORY (DYNAMIC) -->
-<section id="history">
-    <h2>Cricket History</h2>
-    <div id="historyList"></div>
-</section>
-
-<!-- TOP BUTTON -->
-<button onclick="goTop()" id="topBtn">⬆ Top</button>
-
-<!-- SCRIPT -->
 <script src="script.js"></script>
-
-</body>
-</html>
-
-
-<header class="hero">
-    <h1>🌍 International Teams</h1>
-</header>
-
-<section class="card">
-
-    <h2>Select a Team</h2>
-
-    <ul>
-
-        <li><a href="pakistan.html">🇵🇰 Pakistan</a></li>
-        <li><a href="india.html">🇮🇳 India</a></li>
-        <li><a href="england.html">🏴 England</a></li>
-        <li><a href="australia.html">🇦🇺 Australia</a></li>
-        <li><a href="southafrica.html">🇿🇦 South Africa</a></li>
-        <li><a href="newzealand.html">🇳🇿 New Zealand</a></li>
-        <li><a href="srilanka.html">🇱🇰 Sri Lanka</a></li>
-        <li><a href="bangladesh.html">🇧🇩 Bangladesh</a></li>
-        <li><a href="afghanistan.html">🇦🇫 Afghanistan</a></li>
-        <li><a href="ireland.html">🇮🇪 Ireland</a></li>
-        <li><a href="zimbabwe.html">🇿🇼 Zimbabwe</a></li>
-        <li><a href="westindies.html">🏝 West Indies</a></li>
-        <li><a href="netherlands.html">🇳🇱 Netherlands</a></li>
-        <li><a href="nepal.html">🇳🇵 Nepal</a></li>
-        <li><a href="usa.html">🇺🇸 USA</a></li>
-        <li><a href="uae.html">🇦🇪 UAE</a></li>
-        <li><a href="canada.html">🇨🇦 Canada</a></li>
-        <li><a href="oman.html">🇴🇲 Oman</a></li>
-        <li><a href="namibia.html">🇳🇦 Namibia</a></li>
-        <li><a href="nigeria.html">🇳🇬 Nigeria</a></li>
-        <li><a href="italy.html">🇮🇹 Italy</a></li>
-        <li><a href="jersey.html">🇯🇪 Jersey</a></li>
-        <li><a href="scotland.html">🇳🇴 Scotland</a></li>
-        <li><a href="papuanewguinea.html">🇵🇬 Papua New Guinea</a></li>
-
-    </ul>
-
-</section>
-
 </body>
 </html>
