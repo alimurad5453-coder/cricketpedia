@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 id="teamName"></h1>
+
+<button onclick="showICC()">ICC Events</button>
+<button onclick="showACC()">ACC Events</button>
+
+<div id="result"></div>
+
+<script>
+let team = localStorage.getItem("team");
+document.getElementById("teamName").innerText = team;
+
+function showICC(){
+    document.getElementById("result").innerHTML = `
+        <h2>ICC Events (${team})</h2>
+        <button onclick="showFormat('ODI')">ODI</button>
+        <button onclick="showFormat('T20')">T20</button>
+        <button onclick="showFormat('Test')">Test</button>
+    `;
+}
+
+function showACC(){
+    document.getElementById("result").innerHTML = `
+        <h2>ACC Events (${team})</h2>
+        <button onclick="showFormat('Asia Cup')">Asia Cup</button>
+    `;
+}
+
+function showFormat(format){
+    document.getElementById("result").innerHTML = `
+        <h2>${team} - ${format}</h2>
+        <p>Matches: 100</p>
+        <p>Wins: 60</p>
+        <p>Best Player: Sample Player</p>
+    `;
+}
+</script>
+
+</body>
+</html>
