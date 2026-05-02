@@ -1,233 +1,10 @@
-html {
-    scroll-behavior: smooth;
-}
-
 body {
+    margin: 0;
     font-family: Arial;
-    margin: 0;
-    background: #eef1f5;
-}
-
-/* HEADER */
-header {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    border-bottom: 3px solid #444;
-}
-
-/* NAVBAR */
-nav {
-    background: #333;
-    padding: 12px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #ffcc00;
-    transform: scale(1.1);
-}
-
-/* SECTIONS */
-section {
-    background: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px #ccc;
-}
-
-/* LIST */
-ul {
-    line-height: 1.8;
-}
-
-/* CARDS */
-.card {
-    background: white;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 8px #ccc;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-    nav {
-        display: flex;
-        flex-direction: column;
-    }
-
-    nav a {
-        margin: 5px 0;
-    }
-
-    section {
-        margin: 10px;
-        padding: 10px;
-    }
-
-    .card {
-        margin: 10px 0;
-    }
-}
-.hero {
-    background: linear-gradient(135deg, #111, #333);
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.hero h1 {
-    font-size: 40px;
-    margin: 0;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-top: 10px;
-    opacity: 0.8;
-}
-.dashboard {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin: 20px;
-}
-
-.dashboard .card {
-    text-align: center;
-}
-
-/* MOBILE FIX */
-@media (max-width: 768px) {
-    .dashboard {
-        grid-template-columns: 1fr;
-    }
-}
-section {
-    scroll-margin-top: 80px;
-    transition: 0.3s;
-}
-
-section:target {
-    box-shadow: 0px 0px 15px #ffcc00;
-    transform: scale(1.01);
-}
-#topBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 15px;
-    background: #222;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none;
-}
-
-#topBtn:hover {
-    background: #ffcc00;
-    color: black;
-}
-nav a.active {
-    color: #ffcc00;
-    font-weight: bold;
-    border-bottom: 2px solid #ffcc00;
-}
-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-}
-
-section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-.menu-icon {
-    display: none;
-    font-size: 26px;
-    color: white;
-    cursor: pointer;
-    text-align: center;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-    nav {
-        flex-direction: column;
-    }
-
-    nav a {
-        display: none;
-    }
-
-    nav.active a {
-        display: block;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-}
-body {
-    font-family: Arial, sans-serif;
     background: #f4f6f8;
-    color: #222;
 }
 
-/* Smooth container feel */
-section {
-    margin: 25px auto;
-    max-width: 1100px;
-}
-
-/* Card upgrade */
-.card {
-    background: #fff;
-    padding: 18px;
-    margin: 12px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
-/* Navbar polish */
-nav {
-    background: #1f1f1f;
-    padding: 14px;
-}
-
-nav a {
-    font-size: 15px;
-}
-
-/* Hero upgrade */
-.hero {
-    padding: 70px 20px;
-    background: linear-gradient(135deg, #111, #333);
-}
-/* HERO HEADER */
+/* HERO */
 .hero {
     background: #111;
     color: white;
@@ -235,41 +12,35 @@ nav a {
     padding: 25px;
 }
 
-/* CARD BOX */
+/* SEARCH */
+.search-container {
+    text-align: right;
+    padding: 10px;
+}
+
+#searchBox {
+    padding: 8px;
+    width: 200px;
+}
+
+/* DASHBOARD GRID */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+/* CARDS */
 .card {
     background: white;
-    margin: 20px;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* BODY */
-body {
-    font-family: Arial;
-    margin: 0;
-    background: #f4f6f8;
-}
-
-/* TEXT */
-h1, h2 {
-    margin: 10px 0;
-}
-
-/* PLAYER PAGE CENTERING */
-section.card {
-    max-width: 600px;
-    margin: 40px auto;
-}
-
-/* SIMPLE RESPONSIVE */
-@media (max-width: 600px) {
-    .card {
-        margin: 10px;
-        padding: 15px;
-    }
-
-    .hero {
-        padding: 15px;
-    }
+.card:hover {
+    transform: translateY(-5px);
 }
