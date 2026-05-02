@@ -1,4 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CricketPedia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- HERO -->
+<header class="hero">
+    <h1>🏏 CricketPedia</h1>
+    <p>Your Complete Cricket Knowledge Hub</p>
+</header>
+
+<!-- NAV -->
+<nav>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <a href="index.html">Home</a>
+    <a href="#players">Players</a>
+    <a href="#umpires">Umpires</a>
+    <a href="#stadiums">Stadiums</a>
+    <a href="#history">History</a>
+</nav>
+
+<!-- SEARCH -->
+<input type="text" id="searchBox" onkeyup="searchSite()" placeholder="Search players...">
+
+<!-- DASHBOARD -->
+<section class="dashboard">
+
+    <div class="card">
+        <h3>🏏 Players</h3>
+        <p>View cricket players stats</p>
+    </div>
+
+    <div class="card">
+        <h3>🧑‍⚖️ Umpires</h3>
+        <p>Explore umpire records</p>
+    </div>
+
+    <div class="card">
+        <h3>🏟️ Stadiums</h3>
+        <p>Famous cricket stadiums</p>
+    </div>
+
+    <div class="card">
+        <h3>📜 History</h3>
+        <p>Cricket evolution</p>
+    </div>
+
+</section>
+
+<!-- PLAYERS (DYNAMIC) -->
+<section id="players">
+    <h2>Top Players</h2>
+    <div id="playersList"></div>
+</section>
+
+<!-- UMPIRES (DYNAMIC) -->
+<section id="umpires">
+    <h2>Top Umpires</h2>
+    <div id="umpiresList"></div>
+</section>
+
+<!-- STADIUMS (DYNAMIC) -->
+<section id="stadiums">
+    <h2>Famous Stadiums</h2>
+    <div id="stadiumsList"></div>
+</section>
+
+<!-- HISTORY (DYNAMIC) -->
+<section id="history">
+    <h2>Cricket History</h2>
+    <div id="historyList"></div>
+</section>
+
+<!-- TOP BUTTON -->
+<button onclick="goTop()" id="topBtn">⬆ Top</button>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
 <!DOCTYPE html>
 <html>
 <head>
