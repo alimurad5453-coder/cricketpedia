@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CricketPedia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+    <h1>🏏 CricketPedia</h1>
+    <p>Your Complete Cricket Knowledge Hub</p>
+</header>
+
+<!-- NAV -->
+<nav>
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <a href="index.html">Home</a>
+    <a href="#players">Players</a>
+    <a href="#umpires">Umpires</a>
+    <a href="#stadiums">Stadiums</a>
+    <a href="#history">History</a>
+</nav>
+
+<!-- SEARCH -->
+<input type="text" id="searchBox" onkeyup="searchSite()" 
+placeholder="Search players, stadiums, umpires...">
+
+<!-- DASHBOARD -->
+<section class="dashboard">
+
+    <a href="#players">
+        <div class="card">
+            <h3>🏏 Players</h3>
+            <p>View top cricket players stats</p>
+        </div>
+    </a>
+
+    <a href="#umpires">
+        <div class="card">
+            <h3>🧑‍⚖️ Umpires</h3>
+            <p>Explore umpire records</p>
+        </div>
+    </a>
+
+    <a href="#stadiums">
+        <div class="card">
+            <h3>🏟️ Stadiums</h3>
+            <p>Famous cricket stadiums</p>
+        </div>
+    </a>
+
+    <a href="#history">
+        <div class="card">
+            <h3>📜 History</h3>
+            <p>Cricket evolution & history</p>
+        </div>
+    </a>
+
+</section>
+
+<!-- PLAYERS -->
+<section id="players">
+    <h2>Top Players</h2>
+
+    <a href="babar.html">
+        <div class="card">
+            <h3>Babar Azam</h3>
+            <p>Country: Pakistan</p>
+        </div>
+    </a>
+
+    <a href="kohli.html">
+        <div class="card">
+            <h3>Virat Kohli</h3>
+            <p>Country: India</p>
+        </div>
+    </a>
+</section>
+
+<!-- UMPIRES -->
+<section id="umpires">
+    <h2>Top Umpires</h2>
+
+    <div class="card">
+        <h3>Richard Kettleborough</h3>
+        <p>Matches: 150+</p>
+    </div>
+
+    <div class="card">
+        <h3>Aleem Dar</h3>
+        <p>Matches: 400+</p>
+    </div>
+</section>
+
+<!-- STADIUMS -->
+<section id="stadiums">
+    <h2>Famous Stadiums</h2>
+
+    <div class="card">
+        <h3>Lord's Cricket Ground</h3>
+        <p>Country: England</p>
+        <p>Capacity: 31,000</p>
+    </div>
+
+    <div class="card">
+        <h3>MCG</h3>
+        <p>Country: Australia</p>
+        <p>Capacity: 100,000+</p>
+    </div>
+</section>
+
+<!-- HISTORY -->
+<section id="history">
+    <h2>Cricket History</h2>
+
+    <div class="card">
+        <h3>Start of Cricket</h3>
+        <p>Cricket originated in England in the 16th century.</p>
+    </div>
+
+    <div class="card">
+        <h3>Evolution</h3>
+        <p>Earlier 8-ball overs were used, now 6-ball overs are standard.</p>
+    </div>
+
+    <div class="card">
+        <h3>Formats</h3>
+        <p>Test is oldest, then ODI and T20 introduced.</p>
+    </div>
+</section>
+<button onclick="goTop()" id="topBtn">⬆ Top</button>
+<script src="script.js"></script>
+
+</body>
+</html>
