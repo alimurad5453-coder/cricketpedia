@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+    <h1 id="teamTitle">Team</h1>
+    <p>Select Event Type</p>
+</header>
+
+<section class="dashboard">
+    <div class="card" onclick="openEvent('ICC')">🏆 ICC Events</div>
+    <div class="card" onclick="openEvent('ACC')">🏆 ACC Events</div>
+</section>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const team = params.get("team");
+document.getElementById("teamTitle").innerText = team + " Team";
+
+function openEvent(type){
+    window.location.href = "events.html?team=" + team + "&type=" + type;
+}
+</script>
+
+</body>
+</html>
