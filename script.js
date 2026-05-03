@@ -142,3 +142,86 @@ function openPlayer(id) {
 function goTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
+/* =======================
+   TEAMS / EVENTS SYSTEM
+======================= */
+
+let teamsData = {};
+
+// LOAD TEAMS DATA
+fetch("data.json")
+.then(res => res.json())
+.then(data => {
+    teamsData = data;
+    renderTeamsList();
+});
+
+// TEAMS LIST PAGE
+function renderTeamsList() {
+    let container = document.getElementById("teamsList");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    Object.keys(teamsData).forEach(team => {
+        container.innerHTML += `
+            <div class="card" onclick="openTeam('${team}')">
+                <h3>${team}</h3>
+            </div>
+        `;
+    });
+}
+
+// OPEN TEAM PAGE
+function openTeam(team) {
+    window.location.href = "team.html?team=" + team;
+}
+
+// SHOW EVENTS (ICC / ACC)
+function renderEvents(team) {
+    let container = document.getElementById("eventsList");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    Object.keys(teamsData[team]).forEach(eventType => {
+        container.innerHTML += `
+            <div class="card" onclick="renderFormats('${team}','${eventType}')">
+                <h3>${eventType} Events</h3>
+            </div>
+        `;
+    });
+}
+
+// SHOW FORMATS (ODI / T20 / Test / etc)
+function renderFormats(team, eventType) {
+    let container = document.getElementById("formatsList");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    Object.keys(teamsData[team][eventType]).forEach(format => {
+        container.innerHTML += `
+            <div class="card" onclick="showPerformance('${team}','${eventType}','${format}')">
+                <h3>${format}</h3>
+            </div>
+        `;
+    });
+}
+
+// SHOW PERFORMANCE DETAILS
+function showPerformance(team, eventType, format) {
+    let container = document.getElementById("performance");
+    if (!container) return;
+
+    let data = teamsData[team][eventType][format];
+
+    container.innerHTML = `
+        <div class="card">
+            <h2>${team} - ${eventType} - ${format}</h2>
+            <p>Matches: ${data.matches}</p>
+            <p>Wins: ${data.wins}</p>
+            <p>Best Player: ${data.bestPlayer}</p>
+        </div>
+    `;
+}
