@@ -7,21 +7,33 @@
 <body>
 
 <header class="hero">
-    <h1 id="title"></h1>
+    <h1 id="title">Loading...</h1>
 </header>
 
 <section class="dashboard" id="performanceBox"></section>
 
 <script src="data.js"></script>
+
 <script>
 const team = localStorage.getItem("team");
 const type = localStorage.getItem("type");
 const format = localStorage.getItem("format");
 
-document.getElementById("title").innerText =
-team + " | " + type + " | " + format;
+if(!team || !type || !format){
+    document.getElementById("title").innerText = "Missing Data";
+    document.getElementById("performanceBox").innerHTML =
+        "<div class='card'>Please complete selection flow</div>";
+} else {
+    document.getElementById("title").innerText =
+        team + " | " + type + " | " + format;
 
-showPerformance(team, type, format);
+    if(typeof showPerformance === "function"){
+        showPerformance(team, type, format);
+    } else {
+        document.getElementById("performanceBox").innerHTML =
+            "<div class='card'>Data function missing</div>";
+    }
+}
 </script>
 
 </body>
