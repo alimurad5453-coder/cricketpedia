@@ -18,10 +18,19 @@
 
 <script>
 const team = localStorage.getItem("team");
-document.getElementById("teamTitle").innerText = team + " Team";
-document.getElementById("teamTitle").innerText = team + " Team";
+
+if(!team){
+    document.getElementById("teamTitle").innerText = "No Team Selected";
+} else {
+    document.getElementById("teamTitle").innerText = team + " Team";
+}
 
 function openEvent(type){
+    if(!team){
+        alert("Please select team first");
+        return;
+    }
+
     localStorage.setItem("type", type);
     window.location.href = "events.html";
 }
