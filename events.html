@@ -21,8 +21,18 @@
 const team = localStorage.getItem("team");
 const type = localStorage.getItem("type");
 
+// safety check
+if(!team || !type){
+    alert("Flow broken: team or event missing");
+    window.location.href = "index.html";
+}
 
 function openFormat(format){
+    if(!team || !type){
+        alert("Invalid flow");
+        return;
+    }
+
     localStorage.setItem("format", format);
     window.location.href = "performance.html";
 }
