@@ -21,9 +21,10 @@
 const team = localStorage.getItem("team");
 const type = localStorage.getItem("type");
 
+
 function openFormat(format){
-    window.location.href =
-    "performance.html?team="+team+"&type="+type+"&format="+format;
+    localStorage.setItem("format", format);
+    window.location.href = "performance.html";
 }
 </script>
 
