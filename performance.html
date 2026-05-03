@@ -14,10 +14,9 @@
 
 <script src="data.js"></script>
 <script>
-const params = new URLSearchParams(window.location.search);
-const team = params.get("team");
-const type = params.get("type");
-const format = params.get("format");
+const team = localStorage.getItem("team");
+const type = localStorage.getItem("type");
+const format = localStorage.getItem("format");
 
 document.getElementById("title").innerText =
 team + " | " + type + " | " + format;
