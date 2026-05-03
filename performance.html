@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Performance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+    <h1 id="title"></h1>
+</header>
+
+<section class="dashboard" id="performanceBox"></section>
+
+<script src="data.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const team = params.get("team");
+const type = params.get("type");
+const format = params.get("format");
+
+document.getElementById("title").innerText =
+team + " | " + type + " | " + format;
+
+showPerformance(team, type, format);
+</script>
+
+</body>
+</html>
