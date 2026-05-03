@@ -22,7 +22,9 @@ document.getElementById("teamTitle").innerText = team + " Team";
 document.getElementById("teamTitle").innerText = team + " Team";
 
 function openEvent(type){
-    window.location.href = "events.html?team=" + team + "&type=" + type;
+    localStorage.setItem("type", type);
+    window.location.href = "events.html";
+}
 }
 </script>
 
