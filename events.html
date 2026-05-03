@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+    <h1>Select Format</h1>
+</header>
+
+<section class="dashboard">
+    <div class="card" onclick="openFormat('ODI')">ODI</div>
+    <div class="card" onclick="openFormat('T20')">T20</div>
+    <div class="card" onclick="openFormat('Test')">Test</div>
+    <div class="card" onclick="openFormat('Champions Trophy')">Champions Trophy</div>
+</section>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const team = params.get("team");
+const type = params.get("type");
+
+function openFormat(format){
+    window.location.href =
+    "performance.html?team="+team+"&type="+type+"&format="+format;
+}
+</script>
+
+</body>
+</html>
