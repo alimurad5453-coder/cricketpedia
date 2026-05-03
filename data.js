@@ -1,4 +1,5 @@
 function showPerformance(team, type, format){
+
     const data = {
         "Pakistan": {
             "ICC": {
@@ -10,14 +11,21 @@ function showPerformance(team, type, format){
             "ACC": {
                 "ODI": "Asia Cup multiple titles",
                 "T20": "Asia Cup T20 performances",
-                "Test": "N/A",
-                "Champions Trophy": "N/A"
+                "Test": "Not played",
+                "Champions Trophy": "Not played"
             }
         }
     };
 
-    let text = data[team]?.[type]?.[format] || "No data available";
+    // safety cleanup (VERY IMPORTANT)
+    team = (team || "").trim();
+    type = (type || "").trim();
+    format = (format || "").trim();
+
+    let text =
+        data?.[team]?.[type]?.[format]
+        || "No data available for selected combination";
 
     document.getElementById("performanceBox").innerHTML =
-    `<div class="card"><h3>${text}</h3></div>`;
+        `<div class="card"><h3>${text}</h3></div>`;
 }
